@@ -1,0 +1,64 @@
+#!/bin/bash
+
+getproc(){
+  ps -a
+}
+
+getserv(){
+  systemctl list-units --type=service
+}
+
+getapps(){
+  apt list --installed
+}
+
+getusers(){
+  cat /etc/passwd | cut -d ":" -f 1,5,6
+}
+
+
+sysadmin(){
+    while [ true ]
+     do 
+      echo " 
+      	   1) List all running processes
+	   2) List all running services
+	   3) List all installed software
+	   4) List all users
+	   5) Return to main menu
+	   6) Exit "
+      read option
+      case $option in
+	  1) getproc ;;
+	  2) getserv ;;
+	  3) getapps ;;
+	  4) getusers ;;
+	  5) break ;;
+	  6) exit
+      esac
+     done 
+    exit
+}
+
+secadmin(){
+    echo "hi"
+}
+
+mainmenu(){
+    while [ true ]
+    do
+      echo " 
+      	   1) Security Administration
+	   2) System Administrator
+	   3) Exit "
+      read option
+      case $option in
+	  1) secadmin ;;
+	  2) sysadmin ;;
+	  3) exit
+      esac
+    done
+}
+	   
+mainmenu
+    

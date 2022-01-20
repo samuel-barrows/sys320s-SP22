@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#https://rules.emergingthreats.net/blockrules/emerging-botcc.rules
+#https://rules.emergingthreats.net/blockrules/compromised-ips.txt
+
+#https://www.cisco.com/c/en/us/support/docs/ip/access-lists/26448-ACLsamples.html#anc6
